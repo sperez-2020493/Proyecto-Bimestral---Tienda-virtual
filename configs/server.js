@@ -6,6 +6,7 @@ import helmet from "helmet"
 import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/auth.router.js";
+import userRouter from "../src/user/user.router.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 
 const middlewares = (app) => {
@@ -19,6 +20,7 @@ const middlewares = (app) => {
 
 const routes = (app) =>{
     app.use("/storeSystem/v1/auth", authRoutes);
+    app.use("/storeSystem/v1/user", userRouter)
 }
 
 const conectarDB = async () =>{
