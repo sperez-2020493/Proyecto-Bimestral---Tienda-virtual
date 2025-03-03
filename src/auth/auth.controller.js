@@ -10,6 +10,8 @@ export const register = async (req, res) => {
         data.password = encryptedPassword
         data.profilePicture = profilePicture
 
+        data.role = "CLIENTE_ROLE";
+
         const user = await User.create(data);
 
         return res.status(201).json({

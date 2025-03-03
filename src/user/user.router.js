@@ -12,9 +12,7 @@ router.post(
   register
 );
 
-router.put("/modificClient/:uid", modificarUsuariosValidator , modificarUsuarios);
-
-router.patch("/modificAdmin/:uid", modificarUsuariosValidator , modificarUsuarios);
+router.put("/editUser/:uid", modificarUsuariosValidator , modificarUsuarios);
 
 router.delete("/eliminarUser/:uid", eliminarUserValidation, eliminarUsuario);
 

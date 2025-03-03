@@ -1,5 +1,7 @@
 import { hash } from "argon2"
 import User from "../user/user.model.js"
+import jwt from 'jsonwebtoken';
+
 
 export const register = async (req, res) => {
     try {
@@ -23,66 +25,121 @@ export const register = async (req, res) => {
         });
     }
 }
-export const modificarUsuarios = async (req, res) => {
+
+export const modificarUsuarios = async (req, res) => { 
     try {
-        const { uid } = req.params; 
-        const usuario = await User.findById(uid);
-        if (!usuario) {
-            return res.status(404).json({
+        const token = req.headers.authorization?.split(' ')[1];
+
+        if (!token) {
+            return res.status(401).json({
                 success: false,
-                message: "Usuario no encontrado"
+                message: 'No token provided',
             });
         }
 
-        const { name, surname, username, email, phone, role } = req.body;
+        let descodificar;
+        try {
+            descodificar = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        } catch (err) {
+            return res.status(401).json({
+                success: false,
+                message: 'Token inválido o expirado',
+                error: err.message,
+            });
+        }
 
-        if (name) usuario.name = name;
-        if (surname) usuario.surname = surname;
-        if (username) usuario.username = username;
-        if (email) usuario.email = email;
-        if (phone) usuario.phone = phone;
-        if (role) usuario.role = role;
+        const userId = descodificar.uid; 
+        const { uid } = req.params; 
 
-        await usuario.save();
+        const userEditar = await User.findById(uid);
+        if (!userEditar) {
+            return res.status(404).json({
+                success: false,
+                message: 'Usuario no encontrado',
+            });
+        }
+
+        if (userId !== uid.toString()) {
+            if (userEditar.role === 'ADMIN_ROLE') {
+                return res.status(403).json({
+                    success: false,
+                    message: 'No tienes permiso para modificar a un administrador',
+                });
+            }
+        }
+
+        Object.assign(userEditar, req.body);
+
+        await userEditar.save();
+
         res.status(200).json({
             success: true,
-            msg: "Usuario actualizado correctamente",
-            user: usuario
+            message: "Usuario actualizado correctamente",
+            user: userEditar,
         });
     } catch (err) {
         res.status(500).json({
             success: false,
-            msg: "Error al actualizar usuario",
-            error: err.message
+            message: "Error al actualizar usuario",
+            error: err.message,
         });
     }
 };
-
 export const eliminarUsuario = async (req, res) => {
     try {
+        const token = req.headers.authorization?.split(' ')[1];
+
+        let descodificar;
+            descodificar = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+
+        const userId = descodificar.uid;
         const { uid } = req.params;
 
         const user = await User.findById(uid);
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                message: "Usuario no encontrado"
-            });
+
+
+        if (userId !== uid.toString()) {
+            if (user.role === 'ADMIN_ROLE') {
+                return res.status(403).json({
+                    success: false,
+                    message: 'No tienes permiso para eliminar a un administrador',
+                });
+            }
         }
 
-        user.status = false;
-        await user.save();
+        await User.findByIdAndDelete(uid);
 
         return res.status(200).json({
             success: true,
-            message: "Usuario eliminado correctamente",
-            user
+            message: "Usuario eliminado correctamente"
         });
+
     } catch (err) {
         return res.status(500).json({
             success: false,
             message: "Error al eliminar el usuario",
             error: err.message
         });
+    }
+};
+
+export const admimDefaul = async () => {
+    try {
+        const admin = await User.findOne({ role: "ADMIN_ROLE" });
+
+        if (!admin) {
+        await User.create({
+            name: "Admin",
+            surname: "Admin",
+            username: "Admin",
+            email: "admin@gmail.com",
+            password: await hash("Admin/14", 10), 
+            profilePicture: "default",    
+            phone: "12345678",
+            role: "ADMIN_ROLE",
+            });
+        } else {
+        }
+    } catch (err) {
     }
 };
