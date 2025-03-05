@@ -1,25 +1,25 @@
-import { Schema, model } from "mongoose";
+import { Schema, model} from "mongoose";
 
 const categorySchema = Schema({
-    name: {
+    nameCategory:{
         type: String,
-        required: [true, "Category name is required"],
-        unique: true,
-        maxLength: [50, "Category name cannot exceed 50 characters"]
+        required: [true, "Name category is required"],
+        maxLength: [25, "Name category cannot exceed 35 characters"],
+        unique: true
     },
-    
-    description: {
+    description:{
         type: String,
+        required: [true, "Description is required"],
         maxLength: [255, "Description cannot exceed 255 characters"]
     },
-    
-    status: {
+    status:{
         type: Boolean,
         default: true
     }
-}, {
+},
+{
     versionKey: false,
-    timestamps: true
-});
+    timeStamps: true
+})
 
-export const Categoria = model("Categoria", categorySchema);
+export default model("Category", categorySchema)
