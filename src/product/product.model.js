@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
-const productoSchema = Schema({
-    name: {
+const productoSchema = new Schema({
+    nameProduct: {
         type: String,
         required: [true, "Product name is required"],
         maxLength: [100, "Product name cannot exceed 100 characters"]
@@ -12,35 +12,43 @@ const productoSchema = Schema({
         maxLength: [255, "Description cannot exceed 255 characters"]
     },
 
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: "Category",
+        required: [true, "Category is required"]
+    },
+
     price: {
         type: Number,
         required: [true, "Price is required"],
         min: [0, "Price cannot be negative"]
     },
 
-    amount: {
+    quantity: {
         type: Number,
-        required: [true, "Amount is required"],
-        min: [0, "Amount cannot be negative"]
+        required: [true, "Quantity is required"],
+        min: [0, "Quantity cannot be negative"]
+    },
+
+    sales: {
+        type: Number,
+        min: [0, "Quantity cannot be negative"],
+        default: 0,
+        required: false
     },
     
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: "Categoria",
-        required: [true, "Category is required"]
-    },
-    
-    purchasedBy: {
+    buyer: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        required: [true, "Purchaser is required"]
+        default: null,
+        required: false,
     },
     
     status: {
         type: String,
-        enum: ['AGOTADO', 'DESCONTINUADO'],
+        String: ['AGOTADO', 'DESCONTINUADO'],
         default: 'DISPONIBLE',
-        required: true,
+        required: false,
     },
 
 }, {
@@ -48,4 +56,4 @@ const productoSchema = Schema({
     timestamps: true
 });
 
-export const Producto = model("Producto", productoSchema);
+export default model ("Producto", productoSchema);
