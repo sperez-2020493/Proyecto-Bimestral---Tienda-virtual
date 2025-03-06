@@ -1,5 +1,6 @@
-import categoryModel from './category.model.js';
 import Category from './category.model.js';
+import  Producto  from "../product/product.model.js"; 
+
 
 export const categoríaDefaut = async () => {
     try {
@@ -84,8 +85,18 @@ export const crearCategoria = async (req, res) => {
 export const eliminarCategorias = async (req, res) => { 
     const { uid } = req.params;
     try {
+      
       const category = await Category.findById(uid);
+      
+      if (category.nameCategory === "General") {
+        return res.status(400).json({
+            success: false,
+            message: "No se puede eliminar la categoría 'General'"
+        });
+    }
+      
       const generalCategory = await Category.findOne({ nameCategory: "General" });
+      
       if (!generalCategory) {
         return res.status(404).json({
           success: false,
@@ -93,7 +104,7 @@ export const eliminarCategorias = async (req, res) => {
         });
       }
   
-      await Post.updateMany(
+      await Producto.updateMany(
         { category: uid }, 
         { $set: { category: generalCategory._id } }
       );
