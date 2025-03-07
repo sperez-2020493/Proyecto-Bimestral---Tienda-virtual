@@ -1,12 +1,15 @@
 import { Router } from "express"
-import {generarFactura } from "./factura.controller.js"
-import {  } from "../middlewares/category-validators.js"
+import {generarFactura, getHistorial, getHistorialAdmin } from "./factura.controller.js"
+import { createdFactureValidator, listFacturaValidator, listFacturaPrivValidator } from "../middlewares/factura-validators.js"
 import { deleteFileOnError } from "../middlewares/delete-file-on-error.js"
 
 const router = Router()
 
 
-router.post("/FacturaGenerar", deleteFileOnError, generarFactura)
+router.post("/FacturaGenerar", createdFactureValidator,deleteFileOnError, generarFactura)
+
+router.get("/Historial", listFacturaValidator ,deleteFileOnError, getHistorial)
+router.get("/HistorialPriv/", listFacturaPrivValidator,deleteFileOnError, getHistorialAdmin)
 
 
 export default router

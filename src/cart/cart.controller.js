@@ -6,48 +6,46 @@ export const agregarProduct = async (req, res) => {
     try {
         const token = req.header("Authorization");
         const { uid: userId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
+
         const { productId, quantity } = req.body;
 
-        const productExists = await Producto.findById(productId);
+        const product = await Producto.findById(productId);
+        if (!product) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
 
-        let totalCantidadCarito = 0;
+        if (product.status === "DESCONTINUADO" || product.status === "AGOTADO") {
+            return res.status(400).json({ message: `El producto ${product.nameProduct} no está disponible para la compra` });
+        }
+
+        if (product.quantity < quantity) {
+            return res.status(400).json({ message: "Stock insuficiente para este producto" });
+        }
+
         let cart = await Cart.findOne({ user: userId });
-
-        if (cart) {
-            const productIndex = cart.products.findIndex(producto => producto.product.toString() === productId);
-
-            if (productIndex > -1) {
-                totalCantidadCarito = cart.products[productIndex].quantity + quantity; 
-            } else {
-                totalCantidadCarito = quantity;  
-            }
-        } else {
-            totalCantidadCarito = quantity;
-        }
-
-        if (productExists.quantity < totalCantidadCarito) {
-            return res.status(400).json({ message: "Stock insuficiente" });
-        }
         if (!cart) {
-            cart = new Cart({
-                user: userId,
-                products: [{ product: productId, quantity }]
-            });
-        } else {
-            const productIndex = cart.products.findIndex(producto => producto.product.toString() === productId);
-
-            if (productIndex > -1) {
-                cart.products[productIndex].quantity += quantity;  
-            } else {
-                cart.products.push({ product: productId, quantity });
-            }
+            cart = new Cart({ user: userId, products: [] });
         }
 
-        await cart.save();
-        res.status(200).json({ message: "Producto agregado al carrito", cart });
+        const existingProductIndex = cart.products.findIndex(item => item.product.toString() === productId);
+
+        if (existingProductIndex !== -1) {
+            cart.products[existingProductIndex].quantity += quantity;
+        } else {
+            cart.products.push({ product: productId, quantity });
+        }
+
+        if (product.quantity === 0 && product.status !== "AGOTADO") {
+            product.status = "AGOTADO";
+            await product.save(); 
+        }
+
+        await cart.save();  
+
+        res.status(200).json({ message: "Producto agregado al carrito con éxito", cart });
 
     } catch (error) {
-        return res.status(500).json({ message: "Error al agregar al carrito", error: error.message });
+        return res.status(500).json({ message: "Error al agregar el producto al carrito", error: error.message });
     }
 };
 

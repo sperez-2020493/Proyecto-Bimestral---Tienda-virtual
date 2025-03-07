@@ -12,7 +12,6 @@ const facturaSchema = new Schema({
             ref: "Producto",
             required: true
         },
-        
         quantity: {
             type: Number,
             required: true
@@ -33,7 +32,15 @@ const facturaSchema = new Schema({
     fecha: {
         type: Date,
         default: Date.now
-    }
+    },
+
+    status: {
+        type: String,
+        enum: ['GENERADO', 'PROCESO'],
+        default: 'PROCESO',
+        required: false,
+    },
+
 }, { versionKey: false });
 
 export default model("Factura", facturaSchema);

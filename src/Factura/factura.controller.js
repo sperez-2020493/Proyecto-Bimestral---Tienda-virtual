@@ -1,6 +1,7 @@
 import PDFDocument from 'pdfkit';
 import fs from 'fs';
 import jwt from 'jsonwebtoken';
+import User from '../user/user.model.js';
 import Producto from '../product/product.model.js';
 import Factura from '../Factura/factura.model.js'; 
 import Cart from '../cart/cart.model.js';
@@ -19,6 +20,7 @@ export const generarFactura = async (req, res) => {
 
         let totalCompra = 0;
         const productosFactura = [];
+        let stockInsuficiente = false;
 
         if (!cart.products.every(item => item.product && item.product.nameProduct)) {
             return res.status(400).json({ message: "No todos los productos tienen la información completa" });
@@ -35,11 +37,9 @@ export const generarFactura = async (req, res) => {
             const total = product.price * quantity;
 
             if (product.quantity < quantity) {
-                return res.status(400).json({ message: "Stock insuficiente para el producto " + (product.nameProduct || "desconocido") });
+                stockInsuficiente = true;
+                continue;
             }
-
-            product.quantity -= quantity;
-            await product.save();
 
             productosFactura.push({
                 product: product._id,
@@ -55,9 +55,29 @@ export const generarFactura = async (req, res) => {
         const factura = new Factura({
             user: userId,
             productos: productosFactura,
-            totalCompra
+            totalCompra,
+            status: stockInsuficiente ? "PROCESO" : "GENERADO"
         });
         await factura.save();
+
+        if (stockInsuficiente) {
+            return res.status(400).json({
+                message: "Stock insuficiente para algunos productos, factura en PROCESO",
+                factura
+            });
+        }
+
+        for (let item of productosFactura) {
+            const product = await Producto.findById(item.product);
+            if (product) {
+                product.quantity -= item.quantity;
+                product.sales += item.quantity;
+                if (product.quantity === 0) {
+                    product.status = "AGOTADO";
+                }
+                await product.save();
+            }
+        }
 
         cart.products = [];
         await cart.save();
@@ -78,7 +98,7 @@ export const generarFactura = async (req, res) => {
         doc.pipe(fs.createWriteStream(facturaPath));
 
         doc.fontSize(16).text('Tienda Virtual', { align: 'center' });
-        doc.fontSize(10).text('Dirección de la tienda, Teléfono, Email', { align: 'center' });
+        doc.fontSize(10).text('6A Avenida 13-54, Cdad. de Guatemala 01007, 2216 0000, infoets@kinal.org.gt', { align: 'center' });
         doc.moveDown(1);
         doc.text('-------------------------------------------', { align: 'center' });
 
@@ -114,6 +134,9 @@ export const generarFactura = async (req, res) => {
 
         doc.end();
 
+        factura.facturaPdfPath = facturaPath;
+        await factura.save();
+
         res.status(200).json({
             message: "Factura generada con éxito",
             factura: factura,
@@ -122,5 +145,92 @@ export const generarFactura = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({ message: "Error al generar la factura", error: error.message });
+    }
+};
+
+
+export const getHistorial = async (req, res) => {
+    try {
+        const token = req.header("Authorization");
+        if (!token) {
+            return res.status(401).json({ error: 'No token provided' });
+        }
+
+        const { uid: userId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
+
+        const facturas = await Factura.find({ user: userId }).populate({
+            path: 'productos.product',  
+            select: 'nameProduct'  
+        });
+
+        const historial = facturas.map(factura => ({
+            facturaId: factura._id,
+            fecha: factura.fecha,
+            totalCompra: factura.totalCompra,
+            productos: factura.productos.map(item => ({
+                nombre: item.product.nameProduct,
+                cantidad: item.quantity,
+                precio: item.price,
+                total: item.total
+            }))
+        }));
+
+        return res.status(200).json({ historial });
+
+    } catch (error) {
+        console.error('Error al obtener el historial de compras:', error.message);
+        res.status(500).json({ error: 'Error al obtener el historial de compras' });
+    }
+};
+
+export const getHistorialAdmin = async (req, res) => {
+    try {
+        const token = req.header("Authorization");
+        if (!token) {
+            return res.status(401).json({ error: 'No token provided' });
+        }
+
+        const { uid: userId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
+
+        const clienteId = req.query.clienteId;
+
+        let facturas;
+
+        if (clienteId) {
+            const cliente = await User.findById(clienteId);
+            if (cliente && cliente.role !== 'CLIENTE_ROLE') {
+                return res.status(403).json({ message: 'No tienes permisos para ver las facturas de un admin' });
+            }
+
+            facturas = await Factura.find({ user: clienteId }).populate({
+                path: 'productos.product',
+                select: 'nameProduct'
+            });
+        } else {
+            facturas = await Factura.find({ user: { $ne: userId }, 'user.role': 'CLIENTE_ROLE' }).populate({
+                path: 'productos.product',
+                select: 'nameProduct'
+            });
+        }
+
+        const historial = facturas.map(factura => ({
+            facturaId: factura._id,
+            fecha: factura.fecha,
+            totalCompra: factura.totalCompra,
+            productos: factura.productos.map(item => ({
+                nombre: item.product.nameProduct,
+                cantidad: item.quantity,
+                precio: item.price,
+                total: item.total
+            }))
+        }));
+
+        return res.status(200).json({
+            historial
+        });
+
+    } catch (error) {
+        console.error('Error al obtener el historial de compras:', error.message);
+        res.status(500).json({ error: 'Error al obtener el historial de compras' });
     }
 };
