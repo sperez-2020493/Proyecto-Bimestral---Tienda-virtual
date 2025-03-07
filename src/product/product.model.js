@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const productoSchema = new Schema({
+
     nameProduct: {
         type: String,
         required: [true, "Product name is required"],
@@ -37,16 +38,15 @@ const productoSchema = new Schema({
         required: false
     },
     
-    buyer: {
+    buyer: [{
         type: Schema.Types.ObjectId,
         ref: "User",
-        default: null,
-        required: false,
-    },
+        default: []
+    }],
     
     status: {
         type: String,
-        String: ['AGOTADO', 'DESCONTINUADO'],
+        enum: ['DISPONIBLE', 'AGOTADO', 'DESCONTINUADO'],
         default: 'DISPONIBLE',
         required: false,
     },
@@ -56,4 +56,4 @@ const productoSchema = new Schema({
     timestamps: true
 });
 
-export default model ("Producto", productoSchema);
+export default model("Producto", productoSchema);

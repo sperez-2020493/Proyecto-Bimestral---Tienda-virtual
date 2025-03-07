@@ -1,7 +1,8 @@
 import { hash } from "argon2"
 import User from "../user/user.model.js"
 import jwt from 'jsonwebtoken';
-
+import  Producto  from "../product/product.model.js"; 
+import  Category  from "../category/category.model.js";
 
 export const register = async (req, res) => {
     try {
@@ -122,6 +123,9 @@ export const eliminarUsuario = async (req, res) => {
         });
     }
 };
+
+
+
 
 export const admimDefaul = async () => {
     try {

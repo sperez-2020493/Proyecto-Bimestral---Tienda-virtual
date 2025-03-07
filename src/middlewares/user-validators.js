@@ -71,3 +71,10 @@ export const eliminarUserValidation = [
     validarCampos,
     handleErrors
 ]
+
+export const listValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE" ),    
+    validarCampos,
+    handleErrors
+]
