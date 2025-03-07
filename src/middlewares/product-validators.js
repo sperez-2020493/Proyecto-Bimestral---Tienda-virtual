@@ -37,3 +37,10 @@ export const listValidator = [
     validarCampos,
     handleErrors
 ]
+
+export const listValidatorUser = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE","CLIENTE_ROLE"),    
+    validarCampos,
+    handleErrors
+]

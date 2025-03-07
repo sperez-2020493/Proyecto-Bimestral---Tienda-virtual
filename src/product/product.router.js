@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { crearProducto, editarProducto, listarProductos, eliminarProducto } from "./product.controller.js"
-import { createdProductValidator, updateProductValidator, deleteProductValidator, listValidator } from "../middlewares/product-validators.js"
+import { crearProducto, editarProducto, listarProductos, eliminarProducto, listarProductosExploracion } from "./product.controller.js"
+import { createdProductValidator, updateProductValidator, deleteProductValidator, listValidator, listValidatorUser } from "../middlewares/product-validators.js"
 import { deleteFileOnError } from "../middlewares/delete-file-on-error.js"
 
 const router = Router()
@@ -14,5 +14,7 @@ router.delete("/eliminarProducto/:uid", deleteProductValidator, deleteFileOnErro
 
 router.get("/productos/", listValidator, listarProductos);
 
+router.get("/productosExploracion/", listValidatorUser, listarProductosExploracion);
 
-export default router
+
+export default router 

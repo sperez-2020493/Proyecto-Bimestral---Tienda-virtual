@@ -78,44 +78,98 @@ export const editarProducto = async (req, res) => {
 
 export const listarProductos = async (req, res) => {
     try {
-        const { category, nameProduct, status, masVendidos } = req.query; 
-        const filterConditions = {};
+        const { category, nameProduct, status, masVendidos, mostrarCategorias } = req.query; 
 
+        if (mostrarCategorias === "true") {
+            const categorias = await Category.find({}, "nameCategory");
+            return res.status(200).json({
+                success: true,
+                message: "Listado de categorías",
+                categorias,
+            });
+        }
+
+        const filtro = {};
         if (category) {
-            filterConditions.category = category;
+            filtro.category = category;
         }
-
         if (nameProduct) {
-            filterConditions.nameProduct = nameProduct;
+            filtro.nameProduct = { $regex: nameProduct, $options: "i" };
         }
-
         if (status) {
-            filterConditions.status = status;
+            filtro.status = status;
         }
 
         let sortOptions = {};
-
         if (masVendidos === "true") {
             sortOptions.sales = -1; 
         }
 
-        const productos = await Producto.find(filterConditions).sort(sortOptions);
+        const productos = await Producto.find(filtro)
+            .sort(sortOptions)
+            .populate("category", "nameCategory");
 
         return res.status(200).json({
             success: true,
-            message: 'Listado de productos',
-            productos,
+            message: "Listado de productos",
+            productos
         });
 
     } catch (error) {
         return res.status(500).json({
             success: false,
-            message: 'Error al listar los productos',
+            message: "Error al listar los productos",
             error: error.message,
         });
     }
 };
 
+
+export const listarProductosExploracion = async (req, res) => {
+    try {
+        const { nameProduct, category, masVendidos, mostrarCategorias } = req.query;
+
+        if (mostrarCategorias === "true") {
+            const categorias = await Category.find({}, "nameCategory");
+            return res.status(200).json({
+                success: true,
+                message: "Listado de categorías",
+                categorias,
+            });
+        }
+
+        const filtro = {};
+        if (nameProduct) {
+            filtro.nameProduct = { $regex: nameProduct, $options: "i" }; 
+        }
+        if (category) {
+            filtro.category = category; 
+        }
+
+        let sortOptions = {};
+        if (masVendidos === "true") {
+            sortOptions.sales = -1; 
+        }
+
+        const productos = await Producto.find(filtro)
+            .sort(sortOptions)
+            .populate("category", "nameCategory")
+            .select("-buyer");
+
+        return res.status(200).json({
+            success: true,
+            message: "Exploración de productos",
+            productos, 
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al explorar los productos",
+            error: error.message,
+        });
+    }
+};
 
 export const eliminarProducto = async (req, res) => {
     try {
