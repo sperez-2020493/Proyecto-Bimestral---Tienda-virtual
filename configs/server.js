@@ -10,6 +10,7 @@ import userRouter from "../src/user/user.router.js"
 import productRouter from "../src/product/product.router.js"
 import categoryRouter from "../src/category/category.router.js"
 import cartRouter from "../src/cart/cart.router.js";
+import facturaRouter from "../src/Factura/Factura.router.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 
 const middlewares = (app) => {
@@ -27,6 +28,7 @@ const routes = (app) =>{
     app.use("/storeSystem/v1/category", categoryRouter);
     app.use("/storeSystem/v1/product", productRouter); 
     app.use("/storeSystem/v1/cart", cartRouter);
+    app.use("/storeSystem/v1/factura", facturaRouter);
 }
 
 const conectarDB = async () =>{
