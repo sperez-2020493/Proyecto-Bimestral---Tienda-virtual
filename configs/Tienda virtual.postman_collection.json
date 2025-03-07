@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "548e9cdc-e41d-4ffc-856e-9ac5820df26f",
+		"_postman_id": "9b5af369-75e2-4b78-984a-a076ca1c113f",
 		"name": "Tienda virtual",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41663688"
+		"_exporter_id": "41958993"
 	},
 	"item": [
 		{
@@ -358,7 +358,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzNjgxOTAsImV4cCI6MTc0MTM3MTc5MH0.ts3N7eC1xwoZNJtStiKWtTPv26XMPiItpuY3tu_B_lg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -367,7 +367,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nameCategory\": \"Deportes\",\r\n    \"description\": \"Artículos deportivos para practicar distintos deportes.\"\r\n    \r\n}",
+							"raw": "{\r\n    \"nameCategory\": \"Juguetes\",\r\n    \"description\": \"Juguetes para niños y niñas de todas las edades.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -441,7 +441,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyMzUyMDEsImV4cCI6MTc0MTIzODgwMX0.6wagaugWrIJxLbgAA2wWqZMcXoErQKyxHOOTRUUc_jc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -449,7 +449,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/category/eliminarCategoria/67c92a0d2f84ef02f69ed329",
+							"raw": "http://localhost:3000/storeSystem/v1/category/eliminarCategoria/67cb2bb788afecb27b3f8b7a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -460,7 +460,7 @@
 								"v1",
 								"category",
 								"eliminarCategoria",
-								"67c92a0d2f84ef02f69ed329"
+								"67cb2bb788afecb27b3f8b7a"
 							]
 						}
 					},
@@ -479,7 +479,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyNDIxMzksImV4cCI6MTc0MTI0NTczOX0.7nI6Gt2u_4kJ87_0c1aug3hE8HW7sRh0WBNZgWqepSc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -488,7 +488,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nameProduct\":\"Bote de leche 2 pinos\",\r\n    \"description\":\"Bote de leche de 500g\",\r\n    \"category\":\"67c92a4dab5babf292aea80f\",\r\n    \"price\":\"120\",\r\n    \"quantity\":\"500\"\r\n}",
+							"raw": "{\r\n  \"nameProduct\": \"Lego Star Wars Millennium Falcon\",\r\n  \"description\": \"Set de construcción de Lego basado en la icónica nave Millennium Falcon.\",\r\n  \"category\": \"67cb2bb788afecb27b3f8b7a\",\r\n  \"price\": \"150\",\r\n  \"quantity\": \"20\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -520,7 +520,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyMzUyMDEsImV4cCI6MTc0MTIzODgwMX0.6wagaugWrIJxLbgAA2wWqZMcXoErQKyxHOOTRUUc_jc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -529,7 +529,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nameProduct\":\"Bote de leche II pinos\",\r\n    \"description\":\"Bote de leche de 1000g\",\r\n    \"category\":\"67c92b47a7a3619b911294c7\",\r\n    \"price\":\"150\",\r\n    \"quantity\":\"600\"\r\n}",
+							"raw": "{\r\n  \"nameProduct\": \"Lego City Estación de Bomberos\",\r\n  \"description\": \"Set de construcción de Lego con estación de bomberos, camión y helicóptero.\",\r\n  \"category\": \"67cb2bb788afecb27b3f8b7a\",\r\n  \"price\": \"120\",\r\n  \"quantity\": \"25\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -537,7 +537,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/product/editarProducto/67c926d2feb4f6bf4bc3ff7b",
+							"raw": "http://localhost:3000/storeSystem/v1/product/editarProducto/67cb733b4b51b4dbe9cddac4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -548,7 +548,7 @@
 								"v1",
 								"product",
 								"editarProducto",
-								"67c926d2feb4f6bf4bc3ff7b"
+								"67cb733b4b51b4dbe9cddac4"
 							]
 						}
 					},
@@ -562,7 +562,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -570,7 +570,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?nameProduct=Bote de leche 2 pinos",
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?nameProduct=Nike",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -586,7 +586,7 @@
 							"query": [
 								{
 									"key": "nameProduct",
-									"value": "Bote de leche 2 pinos"
+									"value": "Nike"
 								}
 							]
 						}
@@ -601,7 +601,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -640,7 +640,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -673,7 +673,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -681,7 +681,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?mostrarCategorias=67c92a4dab5babf292aea80f",
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?category=67cb75d54b51b4dbe9cddaf7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -696,8 +696,8 @@
 							],
 							"query": [
 								{
-									"key": "mostrarCategorias",
-									"value": "67c92a4dab5babf292aea80f"
+									"key": "category",
+									"value": "67cb75d54b51b4dbe9cddaf7"
 								}
 							]
 						}
@@ -712,7 +712,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzODYyMDcsImV4cCI6MTc0MTM4OTgwN30.yMmOWBXcZy3apPxxJ2kUZZ3AZWc3egVZ-AERy-dwzaU",
 									"type": "string"
 								}
 							]
@@ -831,7 +831,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTE5OTUsImV4cCI6MTc0MTMxNTU5NX0.xZivtkfvMuig4MkN4v7g1B7IUGIS-pKTpn1u-BXOJoU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -868,7 +868,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMTMzMTQsImV4cCI6MTc0MTMxNjkxNH0.gbjr3B3gkn5SerrUZb3jKLpgcxPMptvXq0oghWYWctI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -907,7 +907,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -915,7 +915,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?category=67c92a4dab5babf292aea80f",
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?category=67cb2b8688afecb27b3f8b6e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -931,7 +931,7 @@
 							"query": [
 								{
 									"key": "category",
-									"value": "67c92a4dab5babf292aea80f"
+									"value": "67cb2b8688afecb27b3f8b6e"
 								}
 							]
 						}
@@ -946,7 +946,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMTMzMTQsImV4cCI6MTc0MTMxNjkxNH0.gbjr3B3gkn5SerrUZb3jKLpgcxPMptvXq0oghWYWctI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -954,7 +954,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?nameProduct=leche",
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?nameProduct=Nike",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -970,7 +970,7 @@
 							"query": [
 								{
 									"key": "nameProduct",
-									"value": "leche"
+									"value": "Nike"
 								}
 							]
 						}
@@ -985,7 +985,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMTMzMTQsImV4cCI6MTc0MTMxNjkxNH0.gbjr3B3gkn5SerrUZb3jKLpgcxPMptvXq0oghWYWctI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -1024,7 +1024,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -1032,7 +1032,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?mostrarCategorias=true",
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?mostrarCategorias=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1042,7 +1042,7 @@
 								"storeSystem",
 								"v1",
 								"product",
-								"productos",
+								"productosExploracion",
 								""
 							],
 							"query": [
@@ -1068,7 +1068,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzNTkwNjMsImV4cCI6MTc0MTM2MjY2M30.0holL_mrd83vby2yQIeSjzED4cPKH99fNUXrWGRL9xk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -1077,7 +1077,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productId\": \"67ca8df9600f381ef6d17555\",\r\n    \"quantity\": 30\r\n}",
+							"raw": "{\r\n    \"productId\": \"67cb725a4b51b4dbe9cdda97\",\r\n    \"quantity\": 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1109,7 +1109,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMjY3NzEsImV4cCI6MTc0MTMzMDM3MX0.uqycMm3w69mLaNViy7TcsW_2SbB3BTXI7yU-4v9N714",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -1118,7 +1118,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productId\": \"67ca8df9600f381ef6d17555\",\r\n    \"nuevaCantidad\": 10\r\n}",
+							"raw": "{\r\n    \"productId\": \"67cb733b4b51b4dbe9cddac4\",\r\n    \"nuevaCantidad\": 7\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1150,7 +1150,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMzA1OTQsImV4cCI6MTc0MTMzNDE5NH0.rM8osb5BRV_dfUNHuzp-U4D9Lc7R2LZzeNLDlBPOTOA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODczNjksImV4cCI6MTc0MTM5MDk2OX0.v0ohPuNgTKuopBW8FrBxhWkhmdcBXygw7rGNvhgYWJs",
 									"type": "string"
 								}
 							]
@@ -1159,7 +1159,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n{\r\n    \"productId\": \"67ca8df9600f381ef6d17555\"\r\n}\r\n",
+							"raw": "\r\n{\r\n    \"productId\": \"67cb72254b51b4dbe9cdda8d\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1228,7 +1228,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzNTkwNjMsImV4cCI6MTc0MTM2MjY2M30.0holL_mrd83vby2yQIeSjzED4cPKH99fNUXrWGRL9xk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMmFjYzg4YWZlY2IyN2IzZjhiNjAiLCJpYXQiOjE3NDEzODg1NjEsImV4cCI6MTc0MTM5MjE2MX0.M2wB4VeJCgVKbWXPZCn5wUB1lqR1qGP-guHf0TteFDs",
 									"type": "string"
 								}
 							]

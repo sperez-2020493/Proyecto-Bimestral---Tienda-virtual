@@ -149,6 +149,7 @@ export const generarFactura = async (req, res) => {
 };
 
 
+
 export const getHistorial = async (req, res) => {
     try {
         const token = req.header("Authorization");
@@ -192,26 +193,10 @@ export const getHistorialAdmin = async (req, res) => {
 
         const { uid: userId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
 
-        const clienteId = req.query.clienteId;
-
-        let facturas;
-
-        if (clienteId) {
-            const cliente = await User.findById(clienteId);
-            if (cliente && cliente.role !== 'CLIENTE_ROLE') {
-                return res.status(403).json({ message: 'No tienes permisos para ver las facturas de un admin' });
-            }
-
-            facturas = await Factura.find({ user: clienteId }).populate({
-                path: 'productos.product',
-                select: 'nameProduct'
-            });
-        } else {
-            facturas = await Factura.find({ user: { $ne: userId }, 'user.role': 'CLIENTE_ROLE' }).populate({
-                path: 'productos.product',
-                select: 'nameProduct'
-            });
-        }
+        const facturas = await Factura.find().populate({
+            path: 'productos.product',
+            select: 'nameProduct'
+        });
 
         const historial = facturas.map(factura => ({
             facturaId: factura._id,

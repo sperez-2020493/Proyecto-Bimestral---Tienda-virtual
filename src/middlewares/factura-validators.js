@@ -8,7 +8,6 @@ import { handleErrors } from "./handle-errors.js";
 export const createdFactureValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE", "CLIENTE_ROLE" ),
-    body("quantity").notEmpty().withMessage("La cantidad del producto es requerida"),
     validarCampos,
     handleErrors
 ];

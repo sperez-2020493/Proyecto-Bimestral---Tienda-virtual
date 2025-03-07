@@ -32,17 +32,17 @@
 },
 {
   "_id": {
-    "$oid": "67cb2bb788afecb27b3f8b7a"
-  },
-  "nameCategory": "Juguetes",
-  "description": "Juguetes para niños y niñas de todas las edades.",
-  "status": true
-},
-{
-  "_id": {
     "$oid": "67cb2bc488afecb27b3f8b7e"
   },
   "nameCategory": "Deportes",
   "description": "Artículos deportivos para practicar distintos deportes.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb75d54b51b4dbe9cddaf7"
+  },
+  "nameCategory": "Juguetes",
+  "description": "Juguetes para niños y niñas de todas las edades.",
   "status": true
 }]

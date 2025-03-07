@@ -1,20 +1,240 @@
 [{
   "_id": {
-    "$oid": "67ca8df9600f381ef6d17555"
+    "$oid": "67cb72254b51b4dbe9cdda8d"
   },
-  "nameProduct": "Bote de leche 2 pinos",
-  "description": "Bote de leche de 500g",
+  "nameProduct": "Smartphone Samsung Galaxy S23",
+  "description": "Teléfono móvil con pantalla de 6.1\" y cámara de 50MP.",
   "category": {
-    "$oid": "67c92a4dab5babf292aea80f"
+    "$oid": "67cb2b8688afecb27b3f8b6e"
   },
-  "price": 120,
-  "quantity": 280,
+  "price": 750,
+  "quantity": 15,
+  "sales": 5,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:24:37.629Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T23:31:20.244Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb72464b51b4dbe9cdda92"
+  },
+  "nameProduct": "Laptop HP Pavilion 15",
+  "description": "Laptop con procesador Intel i5, 8GB de RAM, y 512GB de SSD.",
+  "category": {
+    "$oid": "67cb2b8688afecb27b3f8b6e"
+  },
+  "price": 600,
+  "quantity": 20,
   "sales": 0,
   "status": "DISPONIBLE",
   "createdAt": {
-    "$date": "2025-03-07T06:11:05.275Z"
+    "$date": "2025-03-07T22:25:10.652Z"
   },
   "updatedAt": {
-    "$date": "2025-03-07T08:40:27.334Z"
+    "$date": "2025-03-07T23:28:38.458Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb725a4b51b4dbe9cdda97"
+  },
+  "nameProduct": "Auriculares Sony WH-1000XM4",
+  "description": "Auriculares inalámbricos con cancelación de ruido.",
+  "category": {
+    "$oid": "67cb2b8688afecb27b3f8b6e"
+  },
+  "price": 350,
+  "quantity": 30,
+  "sales": 5,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:25:30.525Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T23:31:20.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb728e4b51b4dbe9cdda9c"
+  },
+  "nameProduct": "Camiseta Nike Air",
+  "description": "Camiseta deportiva de algodón con el logo Nike.",
+  "category": {
+    "$oid": "67cb2b9288afecb27b3f8b72"
+  },
+  "price": 30,
+  "quantity": 50,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:26:22.929Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:26:22.929Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb729e4b51b4dbe9cddaa1"
+  },
+  "nameProduct": "Sudadera Adidas Originals",
+  "description": "Sudadera con capucha y el logo de Adidas.",
+  "category": {
+    "$oid": "67cb2b9288afecb27b3f8b72"
+  },
+  "price": 55,
+  "quantity": 35,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:26:38.089Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:26:38.089Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb72ae4b51b4dbe9cddaa6"
+  },
+  "nameProduct": "Pantalones Levi's 501",
+  "description": "Pantalones de mezclilla clásicos, estilo regular.",
+  "category": {
+    "$oid": "67cb2b9288afecb27b3f8b72"
+  },
+  "price": 60,
+  "quantity": 60,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:26:54.494Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:26:54.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb72bd4b51b4dbe9cddaab"
+  },
+  "nameProduct": "Mesa de comedor moderna",
+  "description": "Mesa de comedor de 6 puestos, diseño minimalista.",
+  "category": {
+    "$oid": "67cb2b9e88afecb27b3f8b76"
+  },
+  "price": 250,
+  "quantity": 15,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:27:09.823Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:27:09.823Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb72cd4b51b4dbe9cddab0"
+  },
+  "nameProduct": "Sofá cama 3 plazas",
+  "description": "Sofá cama convertible con 3 plazas, ideal para apartamentos.",
+  "category": {
+    "$oid": "67cb2b9e88afecb27b3f8b76"
+  },
+  "price": 500,
+  "quantity": 10,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:27:25.161Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:27:25.161Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb72db4b51b4dbe9cddab5"
+  },
+  "nameProduct": "Pelota de fútbol Nike",
+  "description": "Pelota de fútbol oficial de la marca Nike.",
+  "category": {
+    "$oid": "67cb75d54b51b4dbe9cddaf7"
+  },
+  "price": 40,
+  "quantity": 100,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:27:39.801Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:38:23.544Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb72f94b51b4dbe9cddaba"
+  },
+  "nameProduct": "Raqueta de tenis Wilson Pro",
+  "description": "Raqueta de tenis profesional Wilson Pro, ideal para jugadores avanzados.",
+  "category": {
+    "$oid": "67cb2bc488afecb27b3f8b7e"
+  },
+  "price": 180,
+  "quantity": 25,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:28:09.987Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:28:09.987Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb73224b51b4dbe9cddabf"
+  },
+  "nameProduct": "Bicicleta de montaña Trek",
+  "description": "Bicicleta de montaña con suspensión delantera y cuadro de aluminio.",
+  "category": {
+    "$oid": "67cb2bc488afecb27b3f8b7e"
+  },
+  "price": 950,
+  "quantity": 12,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:28:50.550Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:28:50.550Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb733b4b51b4dbe9cddac4"
+  },
+  "nameProduct": "Lego City Estación de Bomberos",
+  "description": "Set de construcción de Lego con estación de bomberos, camión y helicóptero.",
+  "category": {
+    "$oid": "67cb75d54b51b4dbe9cddaf7"
+  },
+  "price": 120,
+  "quantity": 25,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T22:29:15.634Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:38:23.544Z"
   }
 }]
