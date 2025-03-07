@@ -86,24 +86,44 @@ export const modificarUsuarios = async (req, res) => {
         });
     }
 };
+
 export const eliminarUsuario = async (req, res) => {
     try {
         const token = req.headers.authorization?.split(' ')[1];
 
-        let descodificar;
-            descodificar = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        if (!token) {
+            return res.status(401).json({ error: 'No token provided' });
+        }
 
+        let descodificar;
+        descodificar = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
         const userId = descodificar.uid;
+        
         const { uid } = req.params;
 
         const user = await User.findById(uid);
 
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'Usuario no encontrado',
+            });
+        }
 
         if (userId !== uid.toString()) {
-            if (user.role === 'ADMIN_ROLE') {
+            const userRequesting = await User.findById(userId);
+            
+            if (userRequesting.role === 'ADMIN_ROLE') {
+                if (user.role === 'ADMIN_ROLE') {
+                    return res.status(403).json({
+                        success: false,
+                        message: 'No puedes eliminar a otro administrador',
+                    });
+                }
+            } else {
                 return res.status(403).json({
                     success: false,
-                    message: 'No tienes permiso para eliminar a un administrador',
+                    message: 'No tienes permisos para eliminar este usuario',
                 });
             }
         }
@@ -112,14 +132,14 @@ export const eliminarUsuario = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: "Usuario eliminado correctamente"
+            message: 'Usuario eliminado correctamente',
         });
 
     } catch (err) {
         return res.status(500).json({
             success: false,
-            message: "Error al eliminar el usuario",
-            error: err.message
+            message: 'Error al eliminar el usuario',
+            error: err.message,
         });
     }
 };

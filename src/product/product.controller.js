@@ -183,18 +183,24 @@ export const eliminarProducto = async (req, res) => {
                 message: "Producto no encontrado",
             });
         }
+
+        await Cart.updateMany(
+            { "products.product": uid }, 
+            { $pull: { products: { product: uid } } } 
+        );
+
         await Producto.findByIdAndDelete(uid);
 
         return res.status(200).json({
             success: true,
-            message: "Producto eliminado correctamente"
+            message: "Producto eliminado correctamente",
         });
 
     } catch (err) {
         return res.status(500).json({
             success: false,
             message: "Error al eliminar el producto",
-            error: err.message
+            error: err.message,
         });
     }
 };
