@@ -1,6 +1,6 @@
 [{
   "_id": {
-    "$oid": "67c92a4dab5babf292aea80f"
+    "$oid": "67cb24bb1c3327ac9805a365"
   },
   "nameCategory": "General",
   "description": "Todo producto sin catalogar",
@@ -8,9 +8,41 @@
 },
 {
   "_id": {
-    "$oid": "67c92b47a7a3619b911294c7"
+    "$oid": "67cb2b8688afecb27b3f8b6e"
   },
-  "nameCategory": "Lacteos",
-  "description": "Toda comida que provenga de leche de vaca",
+  "nameCategory": "Electrónica",
+  "description": "Dispositivos electrónicos como teléfonos, computadoras",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb2b9288afecb27b3f8b72"
+  },
+  "nameCategory": "Ropa",
+  "description": "Prendas de vestir para todas las edades y géneros.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb2b9e88afecb27b3f8b76"
+  },
+  "nameCategory": "Hogar1",
+  "description": "Productos para el hogar",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb2bb788afecb27b3f8b7a"
+  },
+  "nameCategory": "Juguetes",
+  "description": "Juguetes para niños y niñas de todas las edades.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb2bc488afecb27b3f8b7e"
+  },
+  "nameCategory": "Deportes",
+  "description": "Artículos deportivos para practicar distintos deportes.",
   "status": true
 }]

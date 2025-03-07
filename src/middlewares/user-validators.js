@@ -56,18 +56,27 @@ export const loginValidator = [
 
 export const modificarUsuariosValidator = [
     validateJWT,              
-    hasRoles("ADMIN_ROLE"),   
+    hasRoles("ADMIN_ROLE", "CLIENTE_ROLE"),   
     param("uid", "No es un ID válido").isMongoId(),
     param("uid").custom(userExists),
     validarCampos,
     handleErrors
 ];
 
-export const eliminarUserValidation = [
+export const eliminarUserPrivValidation = [
     param("uid", "No es un ID válido").isMongoId(),
     param("uid").custom(userExists),
     validateJWT,
     hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]
+
+export const eliminarUserValidation = [
+    param("uid", "No es un ID válido").isMongoId(),
+    param("uid").custom(userExists),
+    validateJWT,
+    hasRoles("CLIENTE_ROLE"),
     validarCampos,
     handleErrors
 ]

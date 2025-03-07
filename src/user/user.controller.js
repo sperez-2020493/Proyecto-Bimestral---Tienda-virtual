@@ -27,7 +27,7 @@ export const register = async (req, res) => {
     }
 }
 
-export const modificarUsuarios = async (req, res) => { 
+export const modificarUsuarios = async (req, res) => {
     try {
         const token = req.headers.authorization?.split(' ')[1];
 
@@ -49,9 +49,8 @@ export const modificarUsuarios = async (req, res) => {
             });
         }
 
-        const userId = descodificar.uid; 
+        const userId = descodificar.uid;
         const { uid } = req.params; 
-
         const userEditar = await User.findById(uid);
         if (!userEditar) {
             return res.status(404).json({
@@ -60,11 +59,20 @@ export const modificarUsuarios = async (req, res) => {
             });
         }
 
-        if (userId !== uid.toString()) {
-            if (userEditar.role === 'ADMIN_ROLE') {
+        const usuarioToken = await User.findById(userId);
+
+        if (usuarioToken.role === 'ADMIN_ROLE') {
+            if (userEditar.role === 'ADMIN_ROLE' && userId !== uid) {
                 return res.status(403).json({
                     success: false,
-                    message: 'No tienes permiso para modificar a un administrador',
+                    message: 'No tienes permiso para modificar a otro administrador',
+                });
+            }
+        } else if (usuarioToken.role === 'CLIENTE_ROLE') {
+            if (userId !== uid) {
+                return res.status(403).json({
+                    success: false,
+                    message: 'No tienes permiso para modificar otro usuario',
                 });
             }
         }
@@ -144,7 +152,51 @@ export const eliminarUsuario = async (req, res) => {
     }
 };
 
+export const eliminarUsuarioPublic = async (req, res) => {
+    try {
+        const token = req.headers.authorization?.split(' ')[1];
 
+        if (!token) {
+            return res.status(401).json({ error: 'No token provided' });
+        }
+
+        let descodificar;
+        descodificar = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        const userId = descodificar.uid;
+        
+        const { uid } = req.params;
+
+        const user = await User.findById(uid);
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'Usuario no encontrado',
+            });
+        }
+
+        if (userId !== uid.toString()) {
+            return res.status(403).json({
+                success: false,
+                message: 'No tienes permisos para eliminar este usuario',
+            });
+        }
+
+        await User.findByIdAndDelete(uid);
+
+        return res.status(200).json({
+            success: true,
+            message: 'Usuario eliminado correctamente',
+        });
+
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: 'Error al eliminar el usuario',
+            error: err.message,
+        });
+    }
+};
 
 
 export const admimDefaul = async () => {

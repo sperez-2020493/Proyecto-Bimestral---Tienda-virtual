@@ -1,24 +1,10 @@
 [{
   "_id": {
-    "$oid": "67c7cf2923d3f292bf3d2657"
-  },
-  "name": "David",
-  "surname": "Perez",
-  "username": "dp",
-  "email": "DP@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$yRDY+DnYEnmEf+HdZl3KFQ$4hXtOe7eBILC8o7N8ZsRTH3RoYjHCbdNaL/4Jx1uSEo",
-  "profilePicture": null,
-  "phone": "45213698",
-  "role": "CLIENTE_ROLE",
-  "status": true
-},
-{
-  "_id": {
     "$oid": "67c7cf32ce1a5675a94ff64c"
   },
   "name": "Admin",
   "surname": "Admin",
-  "username": "Admin",
+  "username": "Admin1",
   "email": "admin@gmail.com",
   "password": "$argon2id$v=19$m=65536,t=3,p=4$sHHxHNyXevfsGDa27jcqAA$4Ur9J6ACnZB3ax+gN+odFxVb5gUIyQkReHrws1Hxf6Y",
   "profilePicture": "default",
@@ -28,15 +14,43 @@
 },
 {
   "_id": {
-    "$oid": "67c7e4e869d26629442cea2d"
+    "$oid": "67cb253d1c3327ac9805a36b"
   },
-  "name": "Berciam",
-  "surname": "Perez",
-  "username": "BD",
-  "email": "BD@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$U2i3LdqqCz88rmnjCNnjBw$BQnvlvHb3f1e8C09Ocl0VZOMFl+/Vw6vUNEFPcmg99U",
+  "name": "Carlos",
+  "surname": "Cap",
+  "username": "CC",
+  "email": "cc@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$4fVzMr58If4uqREjnsi+cg$2RGSCvudsKrWxMdSoPE+aYhpqb+K6CvA6XzaMU17/ys",
+  "profilePicture": null,
+  "phone": "45213698",
+  "role": "CLIENTE_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb258d1c3327ac9805a370"
+  },
+  "name": "Olivia",
+  "surname": "Olivera",
+  "username": "Oo",
+  "email": "Oo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$bOw+s4qpWM4W6ZiTy4snbQ$SxeVl9/bXmWpewtxf74KxhhZsA/F+tr3CN73efL5HCo",
   "profilePicture": null,
   "phone": "45213698",
   "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb2acc88afecb27b3f8b60"
+  },
+  "name": "Sam",
+  "surname": "Cap",
+  "username": "Scp",
+  "email": "scp@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$aPZ2dkKf9daY2lxTZmGaHw$4bKDGnWqFyN6j3eCIRQuxn5NjyuuMpvIyr6qmlfTlzk",
+  "profilePicture": null,
+  "phone": "45213698",
+  "role": "CLIENTE_ROLE",
   "status": true
 }]
