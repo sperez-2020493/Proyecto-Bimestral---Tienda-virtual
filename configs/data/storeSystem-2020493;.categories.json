@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "67c92a4dab5babf292aea80f"
+  },
+  "nameCategory": "General",
+  "description": "Todo producto sin catalogar",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c92b47a7a3619b911294c7"
+  },
+  "nameCategory": "Lacteos",
+  "description": "Toda comida que provenga de leche de vaca",
+  "status": true
+}]

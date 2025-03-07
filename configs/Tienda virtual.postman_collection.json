@@ -1,0 +1,1191 @@
+{
+	"info": {
+		"_postman_id": "020e856c-b34b-4c63-8ed1-d3c1c33f9730",
+		"name": "Tienda virtual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41958993"
+	},
+	"item": [
+		{
+			"name": "Login, Register y usuarios",
+			"item": [
+				{
+					"name": "registerPublic",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "David",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "dp",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "DP@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "AAAa/111",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/David Perez/Downloads/dias-diwali-ingles_473883-2675.png"
+								},
+								{
+									"key": "phone",
+									"value": "45213698",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerPriv",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDExNTM0OTMsImV4cCI6MTc0MTE1NzA5M30.ZqdgZWqeOklDx5SPmy1dkiGq4xYxsnFNlST_ov_9nmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Berciam",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "BD",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "BD@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "AAAa/111",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "phone",
+									"value": "45213698",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/user/registerPriv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"user",
+								"registerPriv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Admin\",\r\n    \"password\":\"Admin/14\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0ZWU1YTY1YWZkZGFkYzFiZTJlMTMiLCJpYXQiOjE3NDA5NjMyOTAsImV4cCI6MTc0MDk2Njg5MH0.AxU6IiwIEM3Z4ZDRvkK1Qw0Zcm70ddakmMVqQHumW9E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Sc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/user/editUser/67c4f20e7b6b6eed2f33aa92",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"user",
+								"editUser",
+								"67c4f20e7b6b6eed2f33aa92"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2IxYWE2ZTRjNjA5Y2Y5NGUyMmYiLCJpYXQiOjE3NDExNDc3MjgsImV4cCI6MTc0MTE1MTMyOH0.QpAJ5voq8N-pQ1eCpL2Q8hyx-AG9nekWWvHVsp_rVuY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/user/eliminarUser/67c7cb1aa6e4c609cf94e22f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"user",
+								"eliminarUser",
+								"67c7cb1aa6e4c609cf94e22f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "agregarCategoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyMzUyMDEsImV4cCI6MTc0MTIzODgwMX0.6wagaugWrIJxLbgAA2wWqZMcXoErQKyxHOOTRUUc_jc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameCategory\":\"Lacteos\",\r\n    \"description\":\"Toda comida que provenga de leche de vaca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/category/agregarCategoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"category",
+								"agregarCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarCategoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDExNTM0OTMsImV4cCI6MTc0MTE1NzA5M30.ZqdgZWqeOklDx5SPmy1dkiGq4xYxsnFNlST_ov_9nmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameCategory\":\"Lacteos\",\r\n    \"description\":\"Todo producto que contenga leche\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/category/editarCategoria/67c7d0bfce1a5675a94ff655",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"category",
+								"editarCategoria",
+								"67c7d0bfce1a5675a94ff655"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCategoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyMzUyMDEsImV4cCI6MTc0MTIzODgwMX0.6wagaugWrIJxLbgAA2wWqZMcXoErQKyxHOOTRUUc_jc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/category/eliminarCategoria/67c92a0d2f84ef02f69ed329",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"category",
+								"eliminarCategoria",
+								"67c92a0d2f84ef02f69ed329"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "agregarProducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyNDIxMzksImV4cCI6MTc0MTI0NTczOX0.7nI6Gt2u_4kJ87_0c1aug3hE8HW7sRh0WBNZgWqepSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameProduct\":\"Bote de leche 2 pinos\",\r\n    \"description\":\"Bote de leche de 500g\",\r\n    \"category\":\"67c92a4dab5babf292aea80f\",\r\n    \"price\":\"120\",\r\n    \"quantity\":\"500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/agregarProducto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"agregarProducto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarProducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyMzUyMDEsImV4cCI6MTc0MTIzODgwMX0.6wagaugWrIJxLbgAA2wWqZMcXoErQKyxHOOTRUUc_jc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameProduct\":\"Bote de leche II pinos\",\r\n    \"description\":\"Bote de leche de 1000g\",\r\n    \"category\":\"67c92b47a7a3619b911294c7\",\r\n    \"price\":\"150\",\r\n    \"quantity\":\"600\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/editarProducto/67c926d2feb4f6bf4bc3ff7b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"editarProducto",
+								"67c926d2feb4f6bf4bc3ff7b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarNombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?nameProduct=Bote de leche 2 pinos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "nameProduct",
+									"value": "Bote de leche 2 pinos"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarPorEstado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?status=DISPONIBLE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "DISPONIBLE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarCatalogo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductosCategoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?mostrarCategorias=67c92a4dab5babf292aea80f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "mostrarCategorias",
+									"value": "67c92a4dab5babf292aea80f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Categorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?mostrarCategorias=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "mostrarCategorias",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarProducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEyNDIxMzksImV4cCI6MTc0MTI0NTczOX0.7nI6Gt2u_4kJ87_0c1aug3hE8HW7sRh0WBNZgWqepSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/eliminarProducto/67c926d2feb4f6bf4bc3ff7b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"eliminarProducto",
+								"67c926d2feb4f6bf4bc3ff7b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "masVendidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?masVendidos=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "masVendidos",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ExploracionProduct",
+			"item": [
+				{
+					"name": "Lista de Productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTE5OTUsImV4cCI6MTc0MTMxNTU5NX0.xZivtkfvMuig4MkN4v7g1B7IUGIS-pKTpn1u-BXOJoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productosExploracion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CategoriasLista",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMTMzMTQsImV4cCI6MTc0MTMxNjkxNH0.gbjr3B3gkn5SerrUZb3jKLpgcxPMptvXq0oghWYWctI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?mostrarCategorias=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productosExploracion",
+								""
+							],
+							"query": [
+								{
+									"key": "mostrarCategorias",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductoCategoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?category=67c92a4dab5babf292aea80f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productosExploracion",
+								""
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "67c92a4dab5babf292aea80f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusquedaNombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMTMzMTQsImV4cCI6MTc0MTMxNjkxNH0.gbjr3B3gkn5SerrUZb3jKLpgcxPMptvXq0oghWYWctI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?nameProduct=leche",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productosExploracion",
+								""
+							],
+							"query": [
+								{
+									"key": "nameProduct",
+									"value": "leche"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "masVendidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMTMzMTQsImV4cCI6MTc0MTMxNjkxNH0.gbjr3B3gkn5SerrUZb3jKLpgcxPMptvXq0oghWYWctI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productosExploracion/?masVendidos=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productosExploracion",
+								""
+							],
+							"query": [
+								{
+									"key": "masVendidos",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mostrarCategorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YzMmNlMWE1Njc1YTk0ZmY2NGMiLCJpYXQiOjE3NDEzMTczMTksImV4cCI6MTc0MTMyMDkxOX0.0PhpeICEVElKMytTtJXNpM7jMK4A4kCYWAbQ9DOwvXI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/product/productos/?mostrarCategorias=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"product",
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "mostrarCategorias",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "agregar al Carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMjY3NzEsImV4cCI6MTc0MTMzMDM3MX0.uqycMm3w69mLaNViy7TcsW_2SbB3BTXI7yU-4v9N714",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"67ca8df9600f381ef6d17555\",\r\n    \"quantity\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/cart/agregarCarrito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"cart",
+								"agregarCarrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarCarrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMjY3NzEsImV4cCI6MTc0MTMzMDM3MX0.uqycMm3w69mLaNViy7TcsW_2SbB3BTXI7yU-4v9N714",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"67ca8df9600f381ef6d17555\",\r\n    \"nuevaCantidad\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/cart/editarCarrito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"cart",
+								"editarCarrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarProducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMzA1OTQsImV4cCI6MTc0MTMzNDE5NH0.rM8osb5BRV_dfUNHuzp-U4D9Lc7R2LZzeNLDlBPOTOA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"productId\": \"67ca8df9600f381ef6d17555\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/cart/eliminarProducto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"cart",
+								"eliminarProducto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCarrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMzA1OTQsImV4cCI6MTc0MTMzNDE5NH0.rM8osb5BRV_dfUNHuzp-U4D9Lc7R2LZzeNLDlBPOTOA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/cart/eliminarCarrito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"cart",
+								"eliminarCarrito"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "FacturaGenerar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3Y2YyOTIzZDNmMjkyYmYzZDI2NTciLCJpYXQiOjE3NDEzMzY1ODQsImV4cCI6MTc0MTM0MDE4NH0.2bs_rIm_5bZCv-P9YVqgvm0UgknzBNafHmCWg2ku8Ec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeSystem/v1/factura/FacturaGenerar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeSystem",
+								"v1",
+								"factura",
+								"FacturaGenerar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

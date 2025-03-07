@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "67ca8df9600f381ef6d17555"
+  },
+  "nameProduct": "Bote de leche 2 pinos",
+  "description": "Bote de leche de 500g",
+  "category": {
+    "$oid": "67c92a4dab5babf292aea80f"
+  },
+  "price": 120,
+  "quantity": 280,
+  "sales": 0,
+  "status": "DISPONIBLE",
+  "createdAt": {
+    "$date": "2025-03-07T06:11:05.275Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T08:40:27.334Z"
+  }
+}]

@@ -1,0 +1,550 @@
+[{
+  "_id": {
+    "$oid": "67caa6ba137c6a0688d1aece"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 500,
+      "price": 120,
+      "total": 60000,
+      "_id": {
+        "$oid": "67caa6ba137c6a0688d1aecf"
+      }
+    }
+  ],
+  "totalCompra": 60000,
+  "fecha": {
+    "$date": "2025-03-07T07:56:42.653Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caa78727afa84e6369c59d"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caa78727afa84e6369c59e"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:00:07.811Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caa8924e39a2585adf4a96"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caa8924e39a2585adf4a97"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:04:34.457Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caa8d9e4ed6996c1d127a2"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caa8d9e4ed6996c1d127a3"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:05:45.773Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaa2540b54094b9dfad62"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaa2540b54094b9dfad63"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:11:17.568Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaa2d40b54094b9dfad71"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaa2d40b54094b9dfad72"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:11:25.697Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaac4d324d0f480b6441b"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaac4d324d0f480b6441c"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:13:56.940Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaacdd324d0f480b6442a"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaacdd324d0f480b6442b"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:14:05.703Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caab20ab76571018594775"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caab20ab76571018594776"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:15:28.276Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caab8aca5d6a2898d4cafb"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caab8aca5d6a2898d4cafc"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:17:14.458Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caab93ca5d6a2898d4cb09"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caab93ca5d6a2898d4cb0a"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:17:23.718Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caabbe9934ee4a445fa3b5"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caabbe9934ee4a445fa3b6"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:18:06.048Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caac04d4e7f8457da256ae"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caac04d4e7f8457da256af"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:19:16.264Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caac499286fad360516789"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caac499286fad36051678a"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:20:25.537Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caac509286fad360516797"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caac509286fad360516798"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:20:32.450Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaca2ac135dd432f03c3d"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaca2ac135dd432f03c3e"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:21:54.229Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caad9896d6bff2515820d2"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caad9896d6bff2515820d3"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:26:00.932Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caae41c4a03c6290c13f1e"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caae41c4a03c6290c13f1f"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:28:49.538Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaeb834859b25c31beaae"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaeb834859b25c31beaaf"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:30:48.973Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67caaf6cfe14cbb2e700e711"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67caaf6cfe14cbb2e700e712"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:33:48.631Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cab01cc7a343c040afc20f"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 10,
+      "price": 120,
+      "total": 1200,
+      "_id": {
+        "$oid": "67cab01cc7a343c040afc210"
+      }
+    }
+  ],
+  "totalCompra": 1200,
+  "fecha": {
+    "$date": "2025-03-07T08:36:44.076Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cab0fb83c9bc30885085c1"
+  },
+  "user": {
+    "$oid": "67c7cf2923d3f292bf3d2657"
+  },
+  "productos": [
+    {
+      "product": {
+        "$oid": "67ca8df9600f381ef6d17555"
+      },
+      "quantity": 30,
+      "price": 120,
+      "total": 3600,
+      "_id": {
+        "$oid": "67cab0fb83c9bc30885085c2"
+      }
+    }
+  ],
+  "totalCompra": 3600,
+  "fecha": {
+    "$date": "2025-03-07T08:40:27.338Z"
+  }
+}]
