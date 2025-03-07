@@ -38,12 +38,6 @@ const productoSchema = new Schema({
         required: false
     },
     
-    buyer: [{
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        default: []
-    }],
-    
     status: {
         type: String,
         enum: ['DISPONIBLE', 'AGOTADO', 'DESCONTINUADO'],
